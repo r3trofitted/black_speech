@@ -1,8 +1,9 @@
 GIT
   remote: git://github.com/r3trofitted/war_troll.git
-  revision: 403063107710573e755be458564a8eed52685204
+  revision: 1d3c1218c655a1090b45332ed122bb89650e6afa
   specs:
     war_troll (0.0.1)
+      black_speech
       rake
 
 PATH
