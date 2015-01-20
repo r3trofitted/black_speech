@@ -2,12 +2,12 @@ require "war_troll/skills"
 require "war_troll/skills/templates"
 
 module BlackSpeech
+  # Convenience method to initialize a new skill context
+  def self.declare_skill(&definition)
+    Skills::Context.new.instance_eval(&definition)
+  end
+  
   module Skills
-    # Convenience method to initialize a new DSL context
-    def self.declare(&definition)
-      Context.new.instance_eval(&definition)
-    end
-    
     class Context
       def initialize(opts = {})
         @forced_opts = opts
