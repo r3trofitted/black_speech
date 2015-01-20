@@ -1,0 +1,35 @@
+GIT
+  remote: git://github.com/r3trofitted/war_troll.git
+  revision: 403063107710573e755be458564a8eed52685204
+  specs:
+    war_troll (0.0.1)
+      rake
+
+PATH
+  remote: .
+  specs:
+    black_speech (0.0.1)
+      rake
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    ansi (1.5.0)
+    builder (3.2.2)
+    minitest (5.5.1)
+    minitest-reporters (1.0.8)
+      ansi
+      builder
+      minitest (>= 5.0)
+      ruby-progressbar
+    rake (10.4.2)
+    ruby-progressbar (1.7.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  black_speech!
+  minitest (>= 5.0.0)
+  minitest-reporters
+  war_troll!
