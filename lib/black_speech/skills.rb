@@ -3,7 +3,7 @@ require "war_troll/skills/templates"
 
 module BlackSpeech
   # Convenience method to initialize a new skill context
-  def self.declare_skill(&definition)
+  def self.speak(&definition)
     Skills::Context.new.instance_eval(&definition)
   end
   

@@ -2,9 +2,9 @@ require 'spec_helper'
 require 'black_speech/skills'
 
 module BlackSpeech
-  describe ".declare_skill" do
-    it "creates a WarTroll::Skills::Templates" do
-      BlackSpeech.declare_skill { skill :new_skill_for_tests }
+  describe ".speak" do
+    it "creates a skill template" do
+      BlackSpeech.speak { skill :new_skill_for_tests }
       
       # A new template module must have been created
       WarTroll::Skills::Templates.exists?(:new_skill_for_tests).must_equal true
@@ -19,7 +19,7 @@ module BlackSpeech
     end
     
     it "creates a new Skill module with a dependent_stat" do
-      BlackSpeech.declare_skill { skill :new_skill_for_tests, stat: :foo }
+      BlackSpeech.speak { skill :new_skill_for_tests, stat: :foo }
       
       o = Object.new.extend(WarTroll::Skills::Templates.fetch(:new_skill_for_tests))
       o.dependent_stat.must_equal :foo
@@ -29,7 +29,7 @@ module BlackSpeech
   describe "Skills" do
     describe "category" do
       it "creates a Skills::Templates with a category" do
-        BlackSpeech.declare_skill do
+        BlackSpeech.speak do
           category :new_category_for_tests do
             skill :new_skill_for_tests
           end
@@ -47,7 +47,7 @@ module BlackSpeech
       end
     
       it "assigns its own dependent_stat to its skills" do
-        BlackSpeech.declare_skill do
+        BlackSpeech.speak do
           category :new_category_for_tests, stat: :bar do
             skill :new_skill_for_tests
           end
@@ -58,7 +58,7 @@ module BlackSpeech
       end
     
       it "forces the category of its skills" do
-        BlackSpeech.declare_skill do
+        BlackSpeech.speak do
           category :new_category_for_tests do
             skill :new_skill_for_tests, category: :a_wrong_category
           end
