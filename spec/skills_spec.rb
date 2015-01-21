@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'black_speech/skills'
 
 module BlackSpeech
   describe ".speak" do
